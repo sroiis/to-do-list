@@ -2,14 +2,12 @@ document.addEventListener("DOMContentLoaded", loadTasks);
 
 function addTask() {
   const taskInput = document.getElementById("taskInput");
-  const prioritySelect = document.getElementById("prioritySelect");
   const taskText = taskInput.value.trim();
-  const priority = prioritySelect.value;
 
   if (taskText === "") return;
 
-  createTaskElement(`${taskText} [${priority}]`);
-  saveTask(`${taskText} [${priority}]`);
+  createTaskElement(taskText);
+  saveTask(taskText);
 
   taskInput.value = "";
 }
